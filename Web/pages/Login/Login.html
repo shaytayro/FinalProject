@@ -1,0 +1,35 @@
+
+<br>
+<br>
+
+
+<h1  style="widows: 20%">Login</h1>
+<div>
+<form name="LoginForm" ng-submit="Login()" novalidate>
+        <p >User Name: 
+        <input type="text"   ng-pattern="/^[a-zA-Z\s]*$/" ng-model="uname" required ng-minlength="3" ng-maxlength="8">
+        <span ng-show="LoginForm.uname.$error.required">This is required! </span>
+        <span ng-show="LoginForm.uname.$error.minlength">Minimum length is 3 </span>
+        <span ng-show="LoginForm.uname.$error.maxlength">Maximum length is 8 </span>
+        <span ng-show="LoginForm.uname.$error.pattern">only letters </span>
+
+        <span ng-show="LoginForm.uname.$invalid">Invalid field</span><br><br>
+    </p>
+        <p>Password: 
+        <input type="text" ng-pattern="/^[a-zA-Z0-9\s]*$/"  ng-model="password" required ng-minlength="5" ng-maxlength="10">
+        <span ng-show="LoginForm.password.$error.required">This is required! </span>
+        <span ng-show="LoginForm.password.$error.minlength">Minimum length is 5</span>
+        <span ng-show="LoginForm.password.$error.maxlength">Maximum length is 10 </span>
+        <span ng-show="LoginForm.password.$error.pattern">only letters and numbers </span>
+
+        <span ng-show="LoginForm.password.$invalid">Invalid field</span><br><br>
+</p>
+<br>
+<p style="color:red;">{{ answer }}</p>
+
+    <p>Don't remmember your password? 
+        <a href="#!RestorePassword">click here</a>
+    </p>
+    <input ng-disabled="LoginForm.$invalid" type="submit" id="submit" value="Login" style="width:15%; height: 3%">
+</form>
+</div>

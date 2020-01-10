@@ -1,0 +1,84 @@
+
+<br>
+<br>
+
+
+<h1  style="widows: 20%">Register</h1>
+        <!-- load controllers -->
+
+<!-- display button functionality -->
+<div  style="widows: 20%" >
+        <form name="registerForm" ng-submit="submit()" novalidate>
+            <p >User Name: 
+            <input type="text" name="uname" ng-pattern="/^[a-zA-Z\s]*$/" ng-model="uname" required ng-minlength="3" ng-maxlength="8">
+            <span ng-show="registerForm.uname.$error.required">This is required! </span>
+            <span ng-show="registerForm.uname.$error.minlength">Minimum length is 3 </span>
+            <span ng-show="registerForm.uname.$error.maxlength">Maximum length is 8 </span>
+            <span ng-show="registerForm.uname.$error.pattern">only letters </span>
+
+            <span ng-show="registerForm.uname.$invalid">Invalid field</span><br><br>
+        </p>
+            <p>Password: 
+            <input type="text" ng-pattern="/^[a-zA-Z0-9\s]*$/" name="password" ng-model="password" required ng-minlength="5" ng-maxlength="10">
+            <span ng-show="registerForm.password.$error.required">This is required! </span>
+            <span ng-show="registerForm.password.$error.minlength">Minimum length is 5</span>
+            <span ng-show="registerForm.password.$error.maxlength">Maximum length is 10 </span>
+            <span ng-show="registerForm.password.$error.pattern">only letters and numbers </span>
+
+            <span ng-show="registerForm.password.$invalid">Invalid field</span><br><br>
+        </p>
+            <p>First Name: 
+            <input type="text" name="FirstName" ng-model="FirstName" required>
+            <span ng-show="registerForm.FirstName.$error.required">This is required! </span>
+            <span ng-show="registerForm.FirstName.$invalid">Invalid field</span><br><br>
+        </p>
+            <p>Last Name: 
+            <input type="text" name="LastName" ng-model="LastName" required>
+            <span ng-show="registerForm.LastName.$error.required">This is required! </span>
+            <span ng-show="registerForm.LastName.$invalid">Invalid field</span><br><br>
+        </p>
+            <p>City: 
+            <input type="text" name="City" ng-model="City" required>
+            <span ng-show="registerForm.City.$error.required">This is required! </span>
+            <span ng-show="registerForm.City.$invalid">Invalid field</span><br><br>
+        </p>
+            <p>Country: 
+            <select ng-model="Country"  ng-options="x for x in names" required></select>
+            <span ng-show="registerForm.Country.$error.required">This is required! </span>
+            <span ng-show="registerForm.Country.$invalid">Invalid field</span><br><br>
+        </p>
+            <p>Email: 
+            <input type="text" ng-pattern= "/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/" name="Email" ng-model="Email" required>
+            <span ng-show="registerForm.Email.$error.pattern">Enter valid Mail </span>
+            <span ng-show="registerForm.Email.$error.required">This is required! </span>
+            <span ng-show="registerForm.Email.$invalid">Invalid field</span><br><br>
+        </p>
+
+        </p>
+        <p>questions: 
+                <select  ng-model="ques1" ng-options="x for x in q1" required></select>
+                <span ng-show="registerForm.ques1.$error.required">This is required! </span>
+                <span ng-show="registerForm.ques1.$invalid">Invalid field</span><br><br>
+        </p>
+        <p>answer:            
+            <input type="text" name="ans1" ng-model="ans1" required>
+            <span ng-show="registerForm.ans1.$error.required">This is required! </span>
+            <span ng-show="registerForm.ans1.$invalid">Invalid field</span><br><br>
+        </p>
+        <p>questions: 
+                <select  ng-model="ques2" ng-options="x for x in q2" required></select>
+                <span ng-show="registerForm.ques2.$error.required">This is required! </span>
+                <span ng-show="registerForm.ques2.$invalid">Invalid field</span><br><br>
+        </p>
+        <p>answer:            
+            <input type="text" name="ans2" ng-model="ans2" required>
+            <span ng-show="registerForm.ans2.$error.required">This is required! </span>
+            <span ng-show="registerForm.ans2.$invalid">Invalid field</span><br><br>
+        </p>
+
+            <input ng-disabled="registerForm.$invalid" type="submit" id="submit" value="Submit" style="width:15%; height: 3%">
+        </form>
+
+        <p style="color:red;">{{ answer }}</p>
+    </div>
+

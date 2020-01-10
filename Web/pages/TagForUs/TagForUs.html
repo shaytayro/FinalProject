@@ -1,0 +1,90 @@
+
+<br>
+<br>
+
+<div ng-init="init()">
+
+    In computer security, a vulnerability is a weakness in some software or system,
+    which can be exploited by an attacker in order to perform unauthorized actions
+    (such as remote code execution).
+    <br>
+    <br>
+    There some databases that collect those vulnerabilities are published.
+    One known database is NVD - National Vulnerability Database.
+    <br>
+    <br>
+
+    Every entry in this database describes a vulnerability in human langue.
+    The following assignment includes examples of vulnerabilities descriptions.
+    <br>
+    <br>
+
+    You should tag the words in the text according to the following labels:
+    <br>
+    <br>
+
+    1. Software or Service : Application/Software name, which contains a security vulnerability.
+    <br>
+    2. Version : The specific version of the vulnerable software.
+    <br>
+    3. Operating System : the operating system which runs the vulnerability software.
+    <br>
+    4. Network Protocol : the network protocol which the attacker utilized.
+    <br>
+    5. Port : specific port which the attacker utilized.
+    <br>
+
+    6. Means : Vulnerability type (for example - Buffer Overflow).
+    <br>
+
+    7. Impact : what can the attacker achieve by the attack (for example - run software. Achieve root permissions, etc.).
+    <br>
+    8. Hardware : the specific Hardware which includes the vulnerability.
+    <br>
+
+    9. Privilege : the required permission to exploit the vulnerability (for example - root/user).
+    <br>
+
+    10. Attack Vector : the context in which the vulnerability is exploitable (for example - physical access, remote access, sharing the same Lan, etc.).
+    <br>
+
+    11. Attack Technique :the specific action that the attacker performs (for example - send long HTTP request).
+    <br>
+    <br>
+    <br>
+    The first labeling task might take a while, but time decreases significantly over the next tasks.
+    There is no necessity to tag words which have no suitable tag.
+    In order to tag a word -first choose the tag you think fits, and afterward click on the word to-be-tagged.
+    If something is unclear, you can use google
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    {{CVEID}}
+    <br>
+    <br>
+    {{CVEDescription}}
+    <br>
+    <br>
+    <form name="TaggingForm" ng-submit="submit()" novalidate>
+
+    <text ng-repeat="x in Tokens track by $index">{{x}}
+        <select ng-model="labels[$index]"  ng-options="y for y in Labels" required>
+            <span ng-show="TaggingForm.labels.$error.required">This is required! </span>
+            <span ng-show="TaggingForm.labels.$invalid">Invalid field</span><br><br>
+
+        </select>
+            <br>
+        </text>
+        <br>
+        <br>
+        <input ng-disabled="TaggingForm.$invalid" type="submit" id="submit" value="Submit" style="width:15%; height: 3%">
+    </form>
+
+    <br>
+
+
+</div>
